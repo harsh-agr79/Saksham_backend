@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\YtPlayListsResource\Pages;
 use App\Filament\Resources\YtPlayListsResource\RelationManagers;
-use App\Models\YtPlayLists;
+use App\Models\ytPlayLists;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -17,7 +17,7 @@ use Filament\Tables\Columns\TextColumn;
 
 class YtPlayListsResource extends Resource
 {
-    protected static ?string $model = YtPlayLists::class;
+    protected static ?string $model = ytPlayLists::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
