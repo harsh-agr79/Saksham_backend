@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\YtPlayLists;
+use App\Models\ytPlayLists;
 
 class YTPlayListController extends Controller
 {
     public function getytplaylists() {
-        $playlists = YtPlayLists::all();
+        $playlists = ytPlayLists::all();
     
         // Modify the URL field for each playlist to extract only the playlist ID
         $playlists->transform(function ($playlist) {
