@@ -392,7 +392,7 @@ class CommunityController extends Controller
 
         // Validate input
         $validator = \Validator::make($request->all(), [
-            'caption' => 'nullable|string|max:255',
+            'caption' => 'nullable|string',
             'content' => 'nullable|file|max:20480', // Max 20MB for content like images or videos
             'original_post_id' => 'nullable|exists:posts,id', // For reposting
         ]);
