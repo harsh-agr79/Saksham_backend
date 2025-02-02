@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Mentor;
 use App\Models\Student;
-use App\Models\Teacher;
+// use App\Models\Teacher;
 use App\Models\Domain;
 use App\Models\Subdomain;
 use App\Models\ModuleGroup;
@@ -1072,9 +1072,9 @@ class CourseController extends Controller {
         }
 
         $student = Student::find( $user->id );
-        $teacher = Teacher::find( $user->id );
+        // $teacher = Teacher::find( $user->id );
 
-        if ( !$student && !$teacher ) {
+        if ( !$student ) {
             return response()->json( [ 'error' => 'Student not found' ], 404 );
         }
     
@@ -1121,9 +1121,9 @@ class CourseController extends Controller {
             }
     
             $student = Student::find( $user->id );
-            $teacher = Teacher::find( $user->id );
+            // $teacher = Teacher::find( $user->id );
 
-            if ( !$student && !$teacher ) {
+            if ( !$student ) {
                 return response()->json( [ 'error' => 'Student not found' ], 404 );
             }
 
@@ -1173,9 +1173,9 @@ class CourseController extends Controller {
 
         // Get the authenticated student
         $student = Student::find( $user->id );
-        $teacher = Teacher::find( $user->id );
+        // $teacher = Teacher::find( $user->id );
 
-        if ( !$student && !$teacher ) {
+        if ( !$student ) {
             return response()->json( [ 'error' => 'Student not found' ], 404 );
         }
 
@@ -1250,9 +1250,9 @@ class CourseController extends Controller {
        
 
         $student = Student::find( $user->id );
-        $teacher = Teacher::find( $user->id );
+        // $teacher = Teacher::find( $user->id );
 
-        if ( !$student && !$teacher ) {
+        if ( !$student ) {
             return response()->json( [ 'error' => 'Student not found' ], 404 );
         }
 
