@@ -40,6 +40,31 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+            'driver' => 'token', // Or 'sanctum' if you're using Laravel Sanctum
+            'provider' => 'users',
+            'hash' => false,
+        ],
+        'student' => [
+            'driver' => 'sanctum',
+            'provider' => 'students',
+        ],
+        'mentor' => [
+            'driver' => 'sanctum',
+            'provider' => 'mentors',
+        ],
+        'company' => [
+            'driver' => 'sanctum',
+            'provider' => 'companies',
+        ],
+        'teacher' => [
+            'driver' => 'sanctum',
+            'provider' => 'teachers',
+        ],
+        'institute' => [
+            'driver' => 'sanctum',
+            'provider' => 'institutes',
+        ],
     ],
 
     /*
@@ -63,6 +88,26 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Student::class,
+        ],
+        'mentors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Mentor::class,
+        ],
+        'companies' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Company::class,
+        ],
+        'teachers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Teacher::class,
+        ],
+        'institutes' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Institute::class,
         ],
 
         // 'users' => [
@@ -94,6 +139,36 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'students' => [
+            'provider' => 'students',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'mentors' => [
+            'provider' => 'mentors',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'companies' => [
+            'provider' => 'companies',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'teachers' => [
+            'provider' => 'teachers',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'institutes' => [
+            'provider' => 'institutes',
+            'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
         ],
