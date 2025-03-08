@@ -14,6 +14,7 @@ use App\Models\Module;
 use App\Models\AssignmentQuiz;
 use App\Models\Enrollment;
 use App\Models\Submission;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller {
     /**
@@ -685,7 +686,7 @@ class CourseController extends Controller {
             $formattedCourses = $courses->map(function ($course) {
                 // Directly use the subdomains array
                 $subdomainIds = $course->subdomains ?? [];
-                $subdomainNames = Subdomain::whereIn('id', $subdomainIds)->get(['id', 'name']);
+                $subdomainNames = DB::table('subdomains')->whereIn('id', $subdomainIds)->get(['id', 'name']);
     
                 return [
                     'id' => $course->id,
@@ -1333,7 +1334,7 @@ class CourseController extends Controller {
             }
 
             // Fetch subdomains for the given domain ID
-            $subdomains = Subdomain::where('domain_id', $id)->get(['id', 'name']);
+            $subdomains =  DB::table('subdomains')->where('domain_id', $id)->get(['id', 'name']);
 
             return response()->json($subdomains, 200);
         } catch (\Exception $e) {
