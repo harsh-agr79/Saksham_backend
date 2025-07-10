@@ -18,6 +18,12 @@ class CodingChallenge extends Model
         'tc_answer',
     ];
 
+    protected $casts = [
+        'description' => 'string',
+        'testcase' => 'string',
+        'tc_answer' => 'string',
+    ];
+
     public function challengeSubmissions()
     {
         return $this->hasMany(ChallengeSubmission::class, 'challenge_id');
